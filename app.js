@@ -17,7 +17,7 @@
         const ProofOfExistenceContract = web3.eth.contract([{"constant":false,"inputs":[{"name":"proof","type":"bytes32"}],"name":"storeProof","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"document","type":"string"}],"name":"notarize","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"document","type":"string"}],"name":"proofFor","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"document","type":"string"}],"name":"checkDocument","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"proof","type":"bytes32"}],"name":"hasProof","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"}])
 
         // Defining the address of where my smart contract is located. 
-        const ProofOfExistence = ProofOfExistenceContract.at("0xaf779cb513d7e1f7014155ecbed4cbb95a39b9e1");
+        const ProofOfExistence = ProofOfExistenceContract.at("0xb104e58ab2bc7448b33adfc8ee24fdc59a712d49");
 
 
 
@@ -31,7 +31,7 @@
           console.log("this is my result", res);
             ProofOfExistence.proofFor(word, (err, res) => {
               console.log("My Hash value", res)
-              $("#myHash").html("This is your unique value, " + res)
+              $("#myHash").html("This is your unique value: " + res)
             })
 
 
